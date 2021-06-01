@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Hue from './components/Hue'
 
 export function App() {
   const [hue, setHue] = useState(Math.floor(Math.random() * 360))
@@ -24,13 +25,9 @@ export function App() {
       >
         hsl(hue: {hue}, saturation: {saturation}%, lightness: {lightness}%)
       </div>
-      <p>Hue: {hue}</p>
-      <input
-        max="360"
-        type="range"
-        value={hue}
-        onChange={(event) => setHue(event.target.value)}
-      />
+
+      <Hue xHue={hue} xSetHue={setHue} />
+
       <p>Saturation: {saturation}</p>
       <input
         max="100"
